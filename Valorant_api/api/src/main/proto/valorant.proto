@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package valorant;
+
+service ValorantService {
+  rpc getSkinsChromas (SkinChromaRequest) returns (SkinChromaResponse);
+}
+
+message SkinChromaRequest{
+  string token = 1;
+}
+
+message SkinChromaResponse{
+  repeated SkinChroma chromas = 1;
+}
+
+message SkinChroma {
+  string uuid = 1;
+  string displayName = 2;
+  string fullRender = 3;
+  string swatch = 4;
+  string streamedVideo = 5;
+}
