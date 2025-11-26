@@ -1,0 +1,29 @@
+# --- ARTEFATOS DE BUILD E COMPILAÇÃO (MAVEN/JAVA) ---
+/target/
+**/target/
+*.jar
+*.war
+*.class
+
+# --- ARTEFATOS FRONTEND (NODE/VITE) ---
+/node_modules/
+**/node_modules/
+/dist/
+/build/
+npm-debug.log*
+
+# --- DADOS E BANCOS LOCAIS ---
+*.db          # Ignora app.db, meubanco.db (SQLite)
+*.sqlite
+logs/
+*.log
+.env          # Variáveis de ambiente secretas
+
+# --- ARQUIVOS DE IDE E SISTEMA ---
+.idea/          # Configurações do IntelliJ
+.vscode/        # Configurações do VS Code
+*.iml
+*.ipr
+*.iws
+.DS_Store
+Thumbs.db
