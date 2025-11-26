@@ -10,6 +10,7 @@ import com.exemplo.payment.grpc.WebhookRequest;
 import com.valorant.api.DTO.SkinChromaDTO;
 import com.valorant.api.DTO.SkinResponseDTO;
 
+import lombok.extern.slf4j.Slf4j;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import valorant.ValorantServiceGrpc;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/validate")
 public class GatewayController  {
@@ -78,6 +80,7 @@ public class GatewayController  {
     @PostMapping("/payment")
     public ResponseEntity<?> createPayment(@RequestBody GatewayPaymentDTO request) {
         try {
+            log.info("Iniciando pagamento... com userId = {}, totalamoutn = {}", request.userId(), request.totalAmount());
             PaymentRequest grpcRequest = PaymentRequest.newBuilder()
                     .setUserId(request.userId())
                     .setTotalAmount(request.totalAmount())

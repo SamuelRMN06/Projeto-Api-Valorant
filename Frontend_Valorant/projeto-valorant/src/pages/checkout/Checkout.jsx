@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import styles from './Checkout.module.css';
+import api from "../../services/api.js";
 
 export const Checkout = () => {
     const [loading, setLoading] = useState(false);
@@ -8,7 +9,7 @@ export const Checkout = () => {
     useEffect(() => {
         const storedId = localStorage.getItem("userId");
         if (storedId) {
-            setUserId(Number(storedId)); // Converte string para número
+            setUserId(Number(storedId));
         }
     }, []);
 
@@ -22,7 +23,7 @@ export const Checkout = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:8082/validate/payment", {
+            const response = await api.post("/validate/payment", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

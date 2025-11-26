@@ -21,12 +21,12 @@ function Login() {
         senha: inputSenha.current.value
       })
 
-      const { token, premium, userId } = response.data;
+      const { token, premium, id } = response.data;
 
 
       localStorage.setItem('token', token);
       localStorage.setItem('isPremium', premium);
-      localStorage.setItem('userId', userId);
+      localStorage.setItem('userId', id);
 
 
       if (premium === true) {
