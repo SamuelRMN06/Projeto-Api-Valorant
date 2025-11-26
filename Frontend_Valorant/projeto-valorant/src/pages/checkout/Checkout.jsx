@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import styles from './checkout.module.css';
+import styles from './Checkout.module.css';
 
 export const Checkout = () => {
     const [loading, setLoading] = useState(false);
