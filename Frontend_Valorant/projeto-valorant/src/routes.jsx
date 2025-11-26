@@ -7,7 +7,7 @@ import Checkout from "./pages/checkout/Checkout.jsx";
 import { Success } from './pages/feedback/Success';
 import { Failure } from './pages/feedback/Failure';
 import { Pending } from './pages/feedback/Pending';
-import { ProtectRoutes } from './ProtectRoutes';
+import { ProtectRoutes } from './protectRoutes';
 
 function AppRoutes() {
     return (
