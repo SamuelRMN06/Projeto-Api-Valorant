@@ -42,7 +42,8 @@ public class AuthController {
         return ResponseEntity.ok(Map.of(
                 "token", token,
                 "premium", autenticado.isPremium(),
-                "userId", autenticado.getId()
+                "userId", autenticado.getId(),
+                "email" , autenticado.getEmail()
         ));
 
     }
